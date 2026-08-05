@@ -45,3 +45,8 @@ docker compose up -d
 ```
 
 **Note:** The PostgreSQL database is automatically pre-seeded with the `teachers` and `classes` tables on first startup.
+
+## Port
+
+- Frontend: localhost:4173
+- Backend: localhost:3000
