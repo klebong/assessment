@@ -1,8 +1,3 @@
-# Postgres DB
-
-```sql
-CREATE DATABASE education;
-
 CREATE TABLE teachers (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -27,21 +22,3 @@ CREATE TABLE classes (
     CONSTRAINT uq_class_teacher UNIQUE (teacher_id),
     CONSTRAINT uq_class_level_name UNIQUE (level, name)
 );
-```
-
-## Assumptions
-
-- Teacher email is unique since it is used to identify the form teacher when creating a class
-- A teacher can only be a form teacher for one class
-- A class has exactly one form teacher
-- Class level + names are unique
-
-## How to Run Locally
-
-Run the following command in the directory where `docker-compose.yml` is located:
-
-```bash
-docker compose up -d
-```
-
-**Note:** The PostgreSQL database is automatically pre-seeded with the `teachers` and `classes` tables on first startup.
